@@ -53,7 +53,7 @@ function addScore(btnId){
         home_score_display.style.color = "#F94F6D";
         guest_score_display.style.color = "green";
     } 
-    else if(guestScore = homeScore){
+    else if(guestScore == homeScore){
         home_score_display.style.color = "#F94F6D";
         guest_score_display.style.color = "#F94F6D";
     }
@@ -86,7 +86,7 @@ function newGame(){
             divWinner.style.display = "block";
             spnwinner.textContent = "GUEST wins the Game!!! 🎉";
           }
-          else if((homeScore = guestScore)){
+          else if((homeScore == guestScore)){
             divWinner.style.display = "block";
             spnwinner.textContent = "Its a TIE!!! 🎉";
           }
