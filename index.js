@@ -72,20 +72,23 @@ function newGame(){
     divWinner.style.display = "none";
     spnwinner.textContent ="";
     var timeleft = 10;
+    txtTimer.value = 0; 
     var countDowntimer = setInterval(function(){
         if(timeleft <= 0){
-          clearInterval(countDowntimer);
-          txtTimer.value = 0;    
+          clearInterval(countDowntimer);             
           homeBtns.style.display = "none";
           guestBtns.style.display = "none";
           if(homeScore > guestScore){            
             divWinner.style.display = "block";
-            spnwinner.textContent = "HOME wins the Game 🎉";
+            spnwinner.textContent = "HOME wins the Game!!! 🎉";
           }
-          else{
+          else if(homeScore < guestScore){
             divWinner.style.display = "block";
-            spnwinner.textContent = "GUEST wins the Game 🎉";
-
+            spnwinner.textContent = "GUEST wins the Game!!! 🎉";
+          }
+          else if((homeScore = guestScore)){
+            divWinner.style.display = "block";
+            spnwinner.textContent = "Its a TIE!!! 🎉";
           }
         }
         txtTimer.value = 10 - timeleft;
